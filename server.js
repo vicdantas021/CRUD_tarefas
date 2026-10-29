@@ -64,7 +64,6 @@ app.get("/tarefas/:id", async (req, res) => {
     const sql = "SELECT * FROM tarefas WHERE id = ?";
     
     try {
-        // NOTA OS COLCHETES [resposta] AQUI:
         const resposta = await conexao.query(sql, [id]);
         console.log(resposta)
         if (resposta.length === 0) {
@@ -94,7 +93,7 @@ app.put("/tarefas/:id", async (req, res)=>{
         id
     ]);
     res.status(201).json({
-        message: "Tarefa cadastrada com sucesso"
+        message: "Tarefa atualizada com sucesso"
     })
 });
 
